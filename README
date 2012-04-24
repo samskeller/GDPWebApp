@@ -1,0 +1,83 @@
+README file
+
+Justin Norden, Cole Stephan, Sam Keller
+04/20/2012
+
+Our application uses data from the Bureau of Economic Analysis, specifically data on the
+GDP across all states, industries, and years ranging from 1997 to 2009. In our webapp,
+you can choose from one of four functions: 1) Get GDP, 2) Growth Rate, 3) Average GDP, and
+4) Volatility. Once you have selected the parameters, the output includes some information
+about what you chose, the data itself, and a graph if it's relevant. The user also has access
+to our source code via the two links at the bottom of the page. Lastly, there is a "Start Over"
+button that takes the user back to the original index.py page.
+
+The fields we use in our form are universally selected from drop down menus.  This helps prevent
+excess user error when submitting queries.  Since we accept data passed through the form, it is
+still possible that malicious users may try and submit bad data.  Because of this, we chose to
+sanatize our user input to get rid of funny symbols that would never be queried. If the user
+selects an industry that doesn't exist or a state that doesn't exist by manually changing the form,
+our program
+
+Feature list:
+    1) Get GDP
+        For this function, like all of our other functions, you have to select a state and industry
+        while the years are optional. If a year is not selected, the largest possible range of
+        years is assumed to collect the data. The default value for the state option is across
+        the entire US and the default value for the industry option is across all industries.
+        Therefore, if you get to the Get GDP page and select nothing, you will get data across
+        the entire US and the default value for the industry option is across all industries.
+        Therefore, if you get to the Get GDP page and select nothing, you will get data across
+        all industries in the US, effectively getting data about the US GDP. Parameters are selected
+        from drop-down menus, sorted alphabetically. If the user manually changes the form itself,
+        our program either says something about how you need to select more parameters or, for
+        the year range, it assumes the largest year range.
+
+        The output contains information about what you selected, a graph of the data where the user
+        can put their mouse over the line and get data about specific years, and a table containing
+        the data points.
+    2) Growth Rate
+        The growth rate function calculates the growth rate across the year range specified by
+        the user user. The user has to select a state and an industry and has the same options for
+        selecting the year range as in the Get GDP function. However, to keep from querying
+        for too much data from the database, the Growth Rate function only asks for the GDP
+        from the start and end year and then calculates the growth rate from that data. Because
+        a table and graph wouldn't make sense here, we only output the table and the calculated
+        growth rate.
+    3) Average GDP
+        This function collects only GDP data from the database, and not data about the years, and
+        then returns the data across the chosen years and calculates the average GDP across
+        those data. Again, the user selects parameters using the same rules as specified for the
+        two functions above. The output consists only of the average GDP number.
+    4) Volatility
+        The Volatility function queries the database in the same way that the Get GDP does-- it
+        asks for year and GDP data. The user selects parameters in the same way as before, too.
+        This function, however, takes this data and, using a complicated algorithm that calculates
+        asks for year and GDP data. The user selects parameters in the same way as before, too.
+        This function, however, takes this data and, using a complicated algorithm that calculates
+        how far data points lie from a trend that fits the data, outputs a volatility index. This
+        index can be as low as 1, which corresponds to a completely linear relationship between
+        the data, and higher numbers means more deviation from the trend. The output also contains
+        a graph thatplots the data across the years specified, so the user can see how "volatile"
+        the data actually is.
+
+
+Citations for our data source:
+    We got our data from the following website:
+        http://www.bea.gov/regional/downloadzip.cfm
+    We also knew that we could use this data because of the following website:
+        https://www.bea.gov/about/accessibility.htm
+
+
+Since we originally wrote our plan, change has primarily been driven by a better understanding of
+the task at hand.  Once we began to have a working system to store and retrive data from our SQL
+server, we found that many of our simpler features could be easily and widely implemented.  We
+decided that it was more important to have many different ways of using our data than to have fewer
+ways of accessing more data. As our focus shifted from task completion to having a cleaner
+implementation, the primary goal became was to modularize and simplify our application. We decided
+to cut out features (like searching by region) when we felt that it wouldn't add anything to the
+final project.  Similarly, some of our optional features (i.e., building graphs) became more
+important to us as we realized how helpful they would be to the end user.
+
+We also realized that we didn't need to query the database in tons of different ways-- instead, we
+could have one function, called queryDatabase, that queries the database in only a few different
+ways, dependent upon what function the user has selected.
