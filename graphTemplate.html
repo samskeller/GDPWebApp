@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>GDP by State Industry and Year Range</title>
+</head>
+
+<body>
+
+<FORM action="index.py"><INPUT type=submit value="Start Over"><a
+href="index.py" ></a></FORM>
+
+    <h2>GDP Data Web Application</h2>
+    <form action="index.py" method="get">
+    
+You Selected:
+<select name="Function">
+<option value="graph" selected='selected'>Graph Data</option>
+</select>
+
+State/Region:
+<select name="state">
+<option value="51" selected='selected'>Select a State</option>
+<option value="01Alabama">	Alabama	</option>
+<option value="02Alaska">	Alaska	</option>
+<option value="04Arizona">	Arizona	</option>
+<option value="05Arkansas">	Arkansas	</option>
+<option value="06California">	California	</option>
+<option value="08Colorado">	Colorado	</option>
+<option value="09Connecticut">	Connecticut	</option>
+<option value="10Delaware">	Delaware	</option>
+<option value="12Florida">	Florida	</option>
+<option value="13Georgia">	Georgia	</option>
+<option value="15Hawaii">	Hawaii	</option>
+<option value="16Idaho">	Idaho	</option>
+<option value="17Illinois">	Illinois	</option>
+<option value="18Indiana">	Indiana	</option>
+<option value="19Iowa">	Iowa	</option>
+<option value="20Kansas">	Kansas	</option>
+<option value="21Kentucky">	Kentucky	</option>
+<option value="22Louisiana">	Louisiana	</option>
+<option value="23Maine">	Maine	</option>
+<option value="24Maryland">	Maryland	</option>
+<option value="25Massachusetts">	Massachusetts	</option>
+<option value="26Michigan">	Michigan	</option>
+<option value="27Minnesota">	Minnesota	</option>
+<option value="28Mississippi">	Mississippi	</option>
+<option value="29Missouri">	Missouri	</option>
+<option value="30Montana">	Montana	</option>
+<option value="31Nebraska">	Nebraska	</option>
+<option value="32Nevada">	Nevada	</option>
+<option value="33New Hampshire  ">	New Hampshire  	</option>
+<option value="3New Jersey4">	New Jersey	</option>
+<option value="35New Mexico">	New Mexico	</option>
+<option value="36New York">	New York	</option>
+<option value="37North Carolina">	North Carolina	</option>
+<option value="38North Dakota">	North Dakota	</option>
+<option value="39Ohio">	Ohio	</option>
+<option value="40Oklahoma">	Oklahoma	</option>
+<option value="41Oregon">	Oregon	</option>
+<option value="42Pennsylvania">	Pennsylvania	</option>
+<option value="44Rhode Island">	Rhode Island	</option>
+<option value="45South Carolina">	South Carolina	</option>
+<option value="46South Dakota">	South Dakota	</option>
+<option value="47Tennessee">	Tennessee	</option>
+<option value="48Texas">	Texas	</option>
+<option value="49Utah">	Utah	</option>
+<option value="50Vermont">	Vermont	</option>
+<option value="51Virginia">	Virginia	</option>
+<option value="53Washington">	Washington	</option>
+<option value="54West Virginia">	West Virginia	</option>
+<option value="55Wisconsin">	Wisconsin	</option>
+<option value="56Wyoming">	Wyoming	</option>
+
+ 
+</select>
+Industry:
+<select name="industry">
+<option value="default">Select an Industry</option>
+<option value="All industry total">All industry total</option>
+<option value="Private industries">Private industries</option>
+<option value="Agriculture forestry fishing and hunting">Agriculture, forestry, fishing, and hunting</option>
+<option value="Crop and animal production (Farms)">Crop and animal production (Farms)</option>
+<option value="Forestry fishing and related activities">Forestry, fishing, and related activities</option>
+<option value="Mining">Mining</option>
+<option value="Oil and gas extraction">Oil and gas extraction</option>
+<option value="Mining (except oil and gas)">Mining (except oil and gas)</option>
+<option value="Support activities for mining">Support activities for mining</option>
+<option value="Utilities">Utilities</option>
+<option value="Construction">Construction</option>
+<option value="Manufacturing">Manufacturing</option>
+<option value="Durable goods">Durable goods</option>
+<option value="Wood product manufacturing">Wood product manufacturing</option>
+<option value="Nonmetallic mineral product manufacturing">Nonmetallic mineral product manufacturing</option>
+<option value="Primary metal manufacturing">Primary metal manufacturing</option>
+<option value="Fabricated metal product manufacturing">Fabricated metal product manufacturing</option>
+<option value="Machinery manufacturing">Machinery manufacturing</option>
+<option value="Computer and electronic product manufacturing">Computer and electronic product manufacturing</option>
+<option value="Electrical equipment appliance and component manufacturing">Electrical equipment, appliance, and component manufacturing</option>
+<option value="Motor vehicle body trailer and parts manufacturing">Motor vehicle, body, trailer, and parts manufacturing</option>
+<option value="Other transportation equipment manufacturing">Other transportation equipment manufacturing</option>
+<option value="Furniture and related product manufacturing">Furniture and related product manufacturing</option>
+<option value="Miscellaneous manufacturing">Miscellaneous manufacturing</option>
+<option value="Nondurable goods">Nondurable goods</option>
+<option value="Food and beverage and tobacco product manufacturing">Food and beverage and tobacco product manufacturing</option>
+<option value="Textile mills and textile product mills">Textile mills and textile product mills</option>
+<option value="Apparel and leather and allied product manufacturing">Apparel and leather and allied product manufacturing</option>
+<option value="Paper manufacturing">Paper manufacturing</option>
+<option value="Printing and related support activities">Printing and related support activities</option>
+<option value="Petroleum and coal products manufacturing">Petroleum and coal products manufacturing</option>
+<option value="Chemical manufacturing">Chemical manufacturing</option>
+<option value="Plastics and rubber products manufacturing">Plastics and rubber products manufacturing</option>
+<option value="Wholesale trade">Wholesale trade</option>
+<option value="Retail trade">Retail trade</option>
+<option value="Transportation and warehousing">Transportation and warehousing</option>
+<option value="Air transportation">Air transportation</option>
+<option value="Rail transportation">Rail transportation</option>
+<option value="Water transportation">Water transportation</option>
+<option value="Truck transportation">Truck transportation</option>
+<option value="Transit and ground passenger transportation">Transit and ground passenger transportation</option>
+<option value="Pipeline transportation">Pipeline transportation</option>
+<option value="Other transportation and support activities">Other transportation and support activities</option>
+<option value="Warehousing and storage">Warehousing and storage</option>
+<option value="Information">Information</option>
+<option value="Publishing industries except Internet">Publishing industries, except Internet</option>
+<option value="Motion picture and sound recording industries">Motion picture and sound recording industries</option>
+<option value="Broadcasting and telecommunications">Broadcasting and telecommunications</option>
+<option value="Information and data processing services">Information and data processing services</option>
+<option value="Finance and insurance">Finance and insurance</option>
+<option value="Federal Reserve banks credit intermediation and related services">Federal Reserve banks, credit intermediation and related services</option>
+<option value="Securities commodity contracts investments">Securities, commodity contracts, investments</option>
+<option value="Insurance carriers and related activities">Insurance carriers and related activities</option>
+<option value="Funds trusts and other financial vehicles">Funds, trusts, and other financial vehicles</option>
+<option value="Real estate and rental and leasing">Real estate and rental and leasing</option>
+<option value="Real estate">Real estate</option>
+<option value="Rental and leasing services and lessors of intangible assets">Rental and leasing services and lessors of intangible assets</option>
+<option value="Professional scientific and technical services">Professional, scientific, and technical services</option>
+<option value="Legal services">Legal services</option>
+<option value="Computer systems design and related services">Computer systems design and related services</option>
+<option value="Other professional scientific and technical services">Other professional, scientific and technical services</option>
+<option value="Management of companies and enterprises">Management of companies and enterprises</option>
+<option value="Administrative and waste management services">Administrative and waste management services</option>
+<option value="Administrative and support services">Administrative and support services</option>
+<option value="Waste management and remediation services">Waste management and remediation services</option>
+<option value="Educational services">Educational services</option>
+<option value="Health care and social assistance">Health care and social assistance</option>
+<option value="Ambulatory health care services">Ambulatory health care services</option>
+<option value="Hospitals and nursing and residential care facilities">Hospitals and nursing and residential care facilities</option>
+<option value="Social assistance">Social assistance</option>
+<option value="Arts entertainment and recreation">Arts, entertainment, and recreation</option>
+<option value="Performing arts spectator sports museums and related services">Performing arts, spectator sports, museums, and related services</option>
+<option value="Amusement gambling and recreation">Amusement, gambling, and recreation</option>
+<option value="Accommodation and food services">Accommodation and food services</option>
+<option value="Accommodation">Accommodation</option>
+<option value="Food services and drinking places">Food services and drinking places</option>
+<option value="Other services except government">Other services, except government</option>
+<option value="Government">Government</option>
+<option value="Federal civilian">Federal civilian</option>
+<option value="Federal military">Federal military</option>
+<option value="State and local">State and local</option>
+</select>
+Start Year:
+<select name="StartYear">
+ <option value="default" selected='selected'>Select a Start Year</option>
+ <option value="1997"> 1997</option>
+ <option value="1998"> 1998</option>
+ <option value="1999"> 1999</option>
+ <option value="2000"> 2000</option>
+ <option value="2001"> 2001</option>
+ <option value="2002"> 2002</option>
+ <option value="2003"> 2003</option>
+ <option value="2004"> 2004</option>
+ <option value="2005"> 2005</option>
+ <option value="2006"> 2006</option>
+ <option value="2007"> 2007</option>
+ <option value="2008"> 2008</option>
+ <option value="2009"> 2009</option>
+</select>
+End Year (optional):
+<select name="EndYear">
+ <option value="default" selected='selected'>Select an End Year</option>
+ <option value="1997"> 1997</option>
+ <option value="1998"> 1998</option>
+ <option value="1999"> 1999</option>
+ <option value="2000"> 2000</option>
+ <option value="2001"> 2001</option>
+ <option value="2002"> 2002</option>
+ <option value="2003"> 2003</option>
+ <option value="2004"> 2004</option>
+ <option value="2005"> 2005</option>
+ <option value="2006"> 2006</option>
+ <option value="2007"> 2007</option>
+ <option value="2008"> 2008</option>
+ <option value="2009"> 2009</option>
+</select>
+
+    <p><input type="submit" value="Go"/></p>
+    </form>
+
+    <!-- links go here -->
+    %s
+    %s
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!--functionTemplate.html, written by Justin Norden, Cole Stephan, and Sam Keller-->
+<!--This is the template for our webapp's starting page-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>GDP Data</title>
+</head>
+
+<body>
+    <br>
+    <h2>GDP Data Web Application</h2>
+    <form action="index.py" method="get">
+
+Function:
+<select name="Function">
+ <option value="5" selected='selected'>Select a Function</option>
+ <option value="getGDP"> Get GDP</option>
+ <option value="growthRate"> GDP Growth Rate</option>
+ <option value="avgGDP"> Avg GDP</option>
+ <option value="volatility"> Volatility</option>
+
+</select>
+
+    <p><input type="submit" value="Go" /></p>
+    
+    </form>
+
+    <!-- links go here -->
+    %s
+    %s
+    %s
+    
+</body>
+</html>
